@@ -5,17 +5,7 @@ export const app = fastify()
 
 const prisma = new PrismaClient()
 
-async function main() {
-  await prisma.user.create({
-    data: {
-      name: 'Rich',
-      email: 'hello@prisma.com',
-    },
-  })
-
-  const allUsers = await prisma.user.findMany()
-  console.dir(allUsers, { depth: null })
-}
+async function main() { }
 
 main()
   .catch(async (e) => {
