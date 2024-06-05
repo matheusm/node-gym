@@ -14,16 +14,17 @@ describe('register use case', () => {
   })
 
   it('should hash user password upon registration', async () => {
-
     const password = '12345678'
-    console.log(sut)
     const { user } = await sut.execute({
       name: 'John Doe',
       email: 'johndoe@ex.com',
       password,
     })
 
-    const isPasswordCorrectlyHashed = await compare(password, user.password_hash)
+    const isPasswordCorrectlyHashed = await compare(
+      password,
+      user.password_hash,
+    )
 
     expect(isPasswordCorrectlyHashed).toBe(true)
   })
@@ -42,12 +43,11 @@ describe('register use case', () => {
         name: 'John Doe',
         email,
         password: '12345678',
-      })
+      }),
     ).rejects.toBeInstanceOf(UserAlreadyExistsError)
   })
 
   it('should register user', async () => {
-
     const { user } = await sut.execute({
       name: 'John Doe',
       email: 'john@jon.com',
