@@ -31,7 +31,7 @@ describe('authenticate use case', () => {
       sut.execute({
         email: 'a@a.com',
         password: '12345678',
-      })
+      }),
     ).rejects.toBeInstanceOf(InvalidCredentialsError)
   })
 
@@ -46,7 +46,7 @@ describe('authenticate use case', () => {
       sut.execute({
         email: 'a@a.com',
         password: '12312312',
-      })
+      }),
     ).rejects.toBeInstanceOf(InvalidCredentialsError)
   })
 })

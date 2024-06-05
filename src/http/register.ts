@@ -17,7 +17,7 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
     await registerUseCase.execute({
       email,
       name,
-      password
+      password,
     })
   } catch (error) {
     if (error instanceof UserAlreadyExistsError) {
