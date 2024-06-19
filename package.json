@@ -7,9 +7,10 @@
     "dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
     "start": "node build/server.js",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test": "vitest run --dir src/use-cases",
+    "test:watch": "vitest --dir src/use-cases",
+    "test:coverage": "vitest --coverage",
+    "test:e2e": "vitest run --dir src/http"
   },
   "keywords": [],
   "author": "",
