@@ -15,12 +15,12 @@ describe('Profile (e2e)', () => {
     await request(app.server).post('/users').send({
       name: 'John Doe',
       email: 'johndoe@example.com',
-      password: '123456',
+      password: '12345678',
     })
 
     const authResponse = await request(app.server).post('/sessions').send({
       email: 'johndoe@example.com',
-      password: '123456',
+      password: '12345678',
     })
 
     const { token } = authResponse.body
